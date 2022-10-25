@@ -22,6 +22,10 @@ const schema = new Schema(
             required: true,
             min: 6,
         },
+        status: {
+            type: Boolean,
+            default: true,
+        },
     }, {
         collection: 'users',
         timestamps: {
@@ -31,7 +35,7 @@ const schema = new Schema(
     }
 );
 
-schema.methods.hashPassword = async () => {
+schema.methods.hashPassword = async function () {
     let passwordHash = hashSync(this.password, genSaltSync(rounds));
     this.password = passwordHash;
 };
