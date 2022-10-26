@@ -7,6 +7,6 @@ export default (schemas) => {
         const results = validationResult(req);
         if(results.isEmpty()) return next();
 
-        return res.status(422).json(results.array());
+        return res.status(422).json(results.mapped());
     };
 };
