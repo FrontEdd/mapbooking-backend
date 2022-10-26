@@ -7,8 +7,6 @@ const schema = new Schema(
         username : {
             type: String,
             required: true,
-            min: 3,
-            max: 20,
             unique: true,
         },
         email: {
@@ -20,7 +18,6 @@ const schema = new Schema(
         password: {
             type: String,
             required: true,
-            min: 6,
         },
         status: {
             type: Boolean,
